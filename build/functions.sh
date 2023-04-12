@@ -31,7 +31,7 @@ fetchSource () {
         if [ ! -f "${file_name}" ]
         then
             printf "Downloading ${url}\n"
-            curl -L -s -o "${file_name}" "${url}"
+            curl -L -o "${file_name}" "${url}" --insecure
         fi
         printf "Extracting to ${build_dir}\n"
         tar "${tar_arg}xf" "${file_name}" -C ${build_dir} --strip-components=1

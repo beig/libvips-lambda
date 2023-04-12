@@ -1,6 +1,6 @@
 #!/bin/sh
 
-fetchSource expat http://${SOURCEFORGE_MIRROR}.dl.sourceforge.net/project/expat/expat/${VERSION_EXPAT}/expat-${VERSION_EXPAT}.tar.bz2
+fetchSource expat https://github.com/libexpat/libexpat/releases/download/R_2_5_0/expat-2.5.0.tar.bz2
 export JSON_VERSIONS="${JSON_VERSIONS}, \"${DEP_NAME}\": \"${VERSION_EXPAT}\""
 
 if [ ! -f "configured.sts" ]; then
@@ -8,6 +8,7 @@ if [ ! -f "configured.sts" ]; then
     ./configure  \
         --prefix=${TARGET} \
         --enable-shared \
+	--without-docbook \
         --disable-static >> ${BUILD_LOGS}/${DEP_NAME}.config.log 2>&1
     touch configured.sts
 else

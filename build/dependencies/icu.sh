@@ -1,6 +1,6 @@
 #!/bin/sh
 
-fetchSource icu http://download.icu-project.org/files/icu4c/${VERSION_ICU}/icu4c-59_1-src.tgz
+fetchSource icu http://github.com/unicode-org/icu/releases/download/release-59-2/icu4c-59_2-src.tgz
 export JSON_VERSIONS="${JSON_VERSIONS}, \"${DEP_NAME}\": \"${VERSION_ICU}\""
 
 cd source
